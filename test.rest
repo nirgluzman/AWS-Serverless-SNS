@@ -1,0 +1,10 @@
+@url = https://ewn2ib4944.execute-api.us-east-1.amazonaws.com/dev/send-sms    
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "phoneNumber": "+4915172743992",
+    "message": "Hello from Nir!"
+}

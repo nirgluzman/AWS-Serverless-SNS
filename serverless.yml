@@ -24,7 +24,15 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - sns:*
+        - sns:SetSMSAttributes
+        - sns:Publish
       Resource: '*'
 
 functions:
+  sendSMS:
+    handler: src/functions/endpoints/sendSMS.handler
+    events:
+      - http:
+          path: send-sms
+          method: POST
+          cors: true
